@@ -2,7 +2,7 @@ package com.campus.model;
 
 import java.util.Arrays;
 
-public class Student {
+public abstract class Student {
     private String studentid;
     private String studentname;
     private int age;
@@ -76,6 +76,16 @@ public class Student {
         if (showMark) {
             System.out.println("Marks: " + Arrays.toString(marks));
         }
+    }
+    //abstract method
+    public abstract void studentType();
+
+    public void generateReport() {
+        System.out.println("Student report generated.");
+    }
+
+    public void eligibleForScholarship() {
+        System.out.println("Not eligible for scholarship.");
     }
 
     public static void displayStudentCount() {
