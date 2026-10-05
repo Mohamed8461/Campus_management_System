@@ -1,23 +1,22 @@
 package com.campus.filter;
 
+import java.io.IOException;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebFilter;
-import jakarta.servlet.http.httpFilter;
+import jakarta.servlet.http.HttpFilter;
 
-@Override
 @WebFilter("/*")
-public class LoggingFilter extends HttpsFilter{
+public class LoggingFilter extends HttpFilter {
 
-    @Override 
-    public void do Filter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+            throws IOException, ServletException {
         System.out.println("Request received");
         chain.doFilter(request, response);
         System.out.println("Response sent");
     }
-}
-
-
-
-
-public class LoggingFilter {
-    
 }
